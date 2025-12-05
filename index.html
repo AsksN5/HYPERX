@@ -7,16 +7,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --accent1:#4a00e0;
-  --accent2:#8e2de2;
-  --accent3:#3fe0c5;
-  --accent4:#00ffb0;
-  --text:#fff;
-  --bg-dark:#0f0f17;
-  --neon:#ff00ff;
-  --cardBG: rgba(255,255,255,0.08);
+  --accent1:#4a00e0; --accent2:#8e2de2; --accent3:#3fe0c5; --accent4:#00ffb0;
+  --text:#fff; --bg-dark:#0f0f17; --neon:#ff00ff; --cardBG: rgba(255,255,255,0.08);
 }
-/* Reset */
 *{margin:0;padding:0;box-sizing:border-box;}
 html,body{height:100%;font-family:'Poppins',sans-serif;overflow-x:hidden;transition: background .4s, color .3s;}
 body{background:linear-gradient(-45deg,var(--accent1),var(--accent2),var(--accent3),var(--accent4));background-size:400% 400%;animation:gradientBG 15s ease infinite;color:var(--text);}
@@ -24,21 +17,18 @@ body{background:linear-gradient(-45deg,var(--accent1),var(--accent2),var(--accen
 body.light-mode{background: linear-gradient(135deg,#f6f9ff,#eaf7ff,#e0fff4);color:#111;}
 body.light-mode .card{--cardBG: rgba(0,0,0,0.06);}
 
-/* Loading */
 #loadingScreen{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:var(--bg-dark);font-weight:700;font-size:28px;color:#fff;}
 #loadingLogo{animation:logoPop 1.2s ease infinite;}
 @keyframes logoPop{0%{transform:scale(0.98);opacity:0.8}50%{transform:scale(1.02);opacity:1}100%{transform:scale(0.98);opacity:0.9}}
 
-/* Landing Page */
 #landingPage{position:fixed;inset:0;z-index:9998;display:flex;align-items:center;justify-content:center;background:var(--bg-dark);}
 .landingCenter{text-align:center;animation:fadeSlide 1s ease;padding:20px;}
-.landingCenter h1{font-size:44px;margin-bottom:10px;font-weight:800;color:var(--neon);text-shadow:0 0 10px var(--neon),0 0 20px var(--neon);}
-.landingCenter p{font-size:16px;opacity:0.95;margin-bottom:20px;}
+.landingCenter h1{font-size:48px;margin-bottom:10px;font-weight:800;color:var(--neon);text-shadow:0 0 10px var(--neon),0 0 20px var(--neon);}
+.landingCenter p{font-size:18px;opacity:0.95;margin-bottom:20px;}
 #enterBtn{padding:14px 32px;border-radius:999px;border:none;font-weight:700;background:#fff;color:var(--accent1);cursor:pointer;font-size:16px;box-shadow:0 8px 30px rgba(0,0,0,0.15);transition:transform .18s,box-shadow .18s;}
 #enterBtn:hover{transform:scale(1.05);box-shadow:0 12px 40px rgba(0,0,0,0.18);}
 @keyframes fadeSlide{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
 
-/* Header */
 header{width:calc(100%-24px);max-width:980px;margin:18px auto;padding:12px 18px;display:flex;justify-content:space-between;align-items:center;border-radius:12px;backdrop-filter:blur(8px);background: rgba(0,0,0,0.18);box-shadow:0 6px 18px rgba(0,0,0,0.18);}
 body.light-mode header{background:rgba(255,255,255,0.7);}
 .header-left h1{font-size:22px;font-weight:800;color:var(--neon);text-shadow:0 0 6px var(--neon),0 0 12px var(--neon);}
@@ -46,41 +36,32 @@ body.light-mode header{background:rgba(255,255,255,0.7);}
 .header-right{display:flex;align-items:center;gap:10px;font-size:13px;opacity:0.95;}
 .mode-toggle{padding:8px 10px;border-radius:10px;border:none;background:rgba(255,255,255,0.08);cursor:pointer;}
 
-/* Navigation */
 .pages-nav{display:flex;justify-content:center;gap:8px;margin:12px 0;}
 .navBtn{padding:8px 18px;border-radius:999px;border:none;background:rgba(255,255,255,0.08);cursor:pointer;transition:all .2s;}
 .navBtn:hover{transform:scale(1.03);box-shadow:0 8px 24px rgba(0,0,0,0.15);}
 .navBtn.active{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff;box-shadow:0 12px 30px rgba(0,0,0,0.25);}
 
-/* Cards */
 .card{width:100%;max-width:720px;background:var(--cardBG);padding:16px;border-radius:14px;backdrop-filter:blur(12px);transition:transform .28s, box-shadow .28s;}
 .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.28);}
 .card-3d{perspective:900px;}
 .card-3d-inner{transition: transform .25s ease;transform-style:preserve-3d;}
 
-/* Weather Cards */
-.weather-cards .card{color:#000;text-align:center;font-weight:600;transition:transform .3s,box-shadow .3s;}
-
-/* Scroll Bar & BackTop */
 #scrollBar{position:fixed;top:0;left:0;height:4px;width:0%;background:linear-gradient(90deg,var(--accent1),var(--accent2));z-index:1200;}
 #backToTop{position:fixed;right:20px;bottom:22px;padding:10px 12px;border-radius:999px;background:var(--neon);color:#fff;border:none;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,0.2);opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s;}
 #backToTop.show{opacity:1;transform:translateY(0);}
 
-/* QR & Instagram */
 .qr-card{display:flex;flex-direction:column;align-items:center;gap:12px;padding:18px;border-radius:14px;background:var(--cardBG);}
 #qrBox{width:180px;height:180px;border-radius:50%;overflow:hidden;border:4px solid var(--neon);display:flex;align-items:center;justify-content:center;position:relative;animation:qrPulse 3s infinite;}
 @keyframes qrPulse{0%{box-shadow:0 0 8px rgba(238,130,238,0.25)}50%{box-shadow:0 0 26px rgba(238,130,238,0.18)}100%{box-shadow:0 0 8px rgba(238,130,238,0.25);}}
 .inst-btn{display:inline-flex;align-items:center;gap:10px;padding:12px 22px;border-radius:999px;border:none;cursor:pointer;background:linear-gradient(135deg,var(--accent1),var(--accent2));color:#fff;font-weight:700;position:relative;overflow:hidden;}
 .inst-btn .ripple{position:absolute;border-radius:999px;transform:translate(-50%,-50%);background:rgba(255,255,255,0.18);pointer-events:none;width:6px;height:6px;opacity:0;transition:all .5s;}
 
-/* Quotes */
 #quotes{text-align:center;font-weight:600;margin:12px auto;font-size:16px;max-width:760px;}
 
-/* Responsive */
 @media (max-width:640px){
 header{flex-direction:column;gap:10px;align-items:center;}
+#qrBox{width:150px;height:150px;}
 .container{padding:12px;}
-.weather-cards .card{width:100% !important;}
 }
 </style>
 </head>
@@ -93,137 +74,112 @@ header{flex-direction:column;gap:10px;align-items:center;}
 <div id="landingPage">
   <div class="landingCenter">
     <h1>HYPER X</h1>
-    <p>TURN IDEAS INTO SUCCESSFUL PROJECTS</p>
+    <p>Transforming Ideas into Reality</p>
     <button id="enterBtn">ENTER</button>
   </div>
 </div>
 
-<!-- Scroll -->
 <div id="scrollBar"></div>
 
-<!-- Main Content -->
 <div id="content" style="display:none;">
 <div class="container">
 
 <header>
   <div class="header-left">
     <h1>HYPER X</h1>
-    <div class="slogan">TURN IDEAS INTO SUCCESSFUL PROJECTS</div>
+    <div class="slogan">Transforming Ideas into Reality</div>
   </div>
   <div class="header-right">
     <div class="clockBox" style="text-align:right">
-      <div id="clock" class="clock">--:--:--</div>
-      <div id="date" class="date">-- -- ----</div>
+      <div id="clock">--:--:--</div>
+      <div id="date">-- -- ----</div>
+      <div id="hijri">-- -- ----</div>
     </div>
     <button id="modeToggle" class="mode-toggle">🌙</button>
   </div>
 </header>
 
 <div class="pages-nav">
-  <button class="navBtn active" data-page="1">Our Services</button>
+  <button class="navBtn active" data-page="1">Cars</button>
   <button class="navBtn" data-page="2">Offers</button>
   <button class="navBtn" data-page="3">My Projects</button>
   <button class="navBtn" data-page="4">Weather</button>
 </div>
 
-<div id="quotes">Providing ready-to-use project paths with a guaranteed plan.</div>
+<div id="quotes">Delivering ready-to-use project paths with guaranteed plans.</div>
 
-<!-- Services Page -->
 <section id="page1" class="page" style="display:block;">
-  <h2 style="text-align:center;margin:12px;">OUR SERVICES</h2>
+  <h2 style="text-align:center;margin:12px;">Our Cars</h2>
   <div class="card card-3d"><div class="card-3d-inner card">
-    <table class="services-table" style="width:100%;color:inherit;border-collapse:collapse;">
-      <tr><th>Service</th><th>Price</th></tr>
-      <tr><td>BMW M3 Competition</td><td>$100,000</td></tr>
-      <tr><td>BMW M4</td><td>$120,000</td></tr>
-      <tr><td>BMW M5</td><td>$150,000</td></tr>
-      <tr><td>…and more cars</td><td>–</td></tr>
-    </table>
+    <ul>
+      <li>BMW M3 Competition</li>
+      <li>BMW M4</li>
+      <li>BMW M5</li>
+      <li>Audi RS7</li>
+      <li>Mercedes AMG GT</li>
+      <li>Porsche 911 Turbo</li>
+      <li>Ferrari F8</li>
+      <li>Lamborghini Huracan</li>
+      <li>…and more</li>
+    </ul>
   </div></div>
 </section>
 
-<!-- Offers Page -->
 <section id="page2" class="page" style="display:none;">
-  <h2 style="text-align:center;margin:12px;">OFFERS</h2>
-  <div class="card" style="max-width:760px;">
-    <p>Ready-to-start project paths with tested plans and guaranteed results.</p>
-    <ul>
-      <li>Double-check orders before requesting services.</li>
-      <li>Follow instructions for best results.</li>
-      <li>Share minimal personal info online.</li>
-    </ul>
-    <div class="qr-card">
-      <div id="qrBox" aria-hidden="true"></div>
-      <button id="instBtn" class="inst-btn">Instagram <span class="ripple"></span></button>
-    </div>
-  </div>
-</section>
-
-<!-- My Projects -->
-<section id="page3" class="page" style="display:none;">
-  <h2 style="text-align:center;margin:12px;">MY PROJECTS</h2>
+  <h2 style="text-align:center;margin:12px;">Offers</h2>
   <div class="card qr-card" style="max-width:520px;">
-    <p style="text-align:center;">We provide website solutions in various fields, starting from $100 with cash-on-delivery payment.</p>
+    <p>Scan QR or open Instagram for details</p>
+    <div id="qrBox"></div>
+    <button id="instBtn" class="inst-btn" title="Open Instagram">Instagram <span class="ripple" style="display:none"></span></button>
   </div>
 </section>
 
-<!-- Weather Page -->
+<section id="page3" class="page" style="display:none;">
+  <h2 style="text-align:center;margin:12px;">My Projects</h2>
+  <div class="card card-3d">
+    <p>We develop websites in various fields at affordable prices. Payment upon delivery.</p>
+    <ul>
+      <li>Project 1</li>
+      <li>Project 2</li>
+      <li>Project 3</li>
+    </ul>
+  </div>
+</section>
+
 <section id="page4" class="page" style="display:none;">
-  <h2 style="text-align:center;margin:12px;">Weekly Weather Forecast</h2>
-  <div class="weather-cards" style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;">
-    <div class="card" style="width:150px;background:linear-gradient(135deg,#6ec1ff,#9be2ff);cursor:pointer;">
-      <h3>Mon</h3><p>Sunny ☀️</p><p>25°C</p><p>Humidity: 40%</p><p>Wind: 10 km/h</p>
-    </div>
-    <div class="card" style="width:150px;background:linear-gradient(135deg,#70c5ff,#a0e5ff);cursor:pointer;">
-      <h3>Tue</h3><p>Cloudy ☁️</p><p>22°C</p><p>Humidity: 50%</p><p>Wind: 12 km/h</p>
-    </div>
-    <div class="card" style="width:150px;background:linear-gradient(135deg,#6ec1ff,#9be2ff);cursor:pointer;">
-      <h3>Wed</h3><p>Rain 🌧️</p><p>20°C</p><p>Humidity: 70%</p><p>Wind: 15 km/h</p>
-    </div>
-    <div class="card" style="width:150px;background:linear-gradient(135deg,#70c5ff,#a0e5ff);cursor:pointer;">
-      <h3>Thu</h3><p>Sunny ☀️</p><p>26°C</p><p>Humidity: 35%</p><p>Wind: 8 km/h</p>
-    </div>
-    <div class="card" style="width:150px;background:linear-gradient(135deg,#6ec1ff,#9be2ff);cursor:pointer;">
-      <h3>Fri</h3><p>Cloudy ☁️</p><p>23°C</p><p>Humidity: 45%</p><p>Wind: 10 km/h</p>
-    </div>
-    <div class="card" style="width:150px;background:linear-gradient(135deg,#70c5ff,#a0e5ff);cursor:pointer;">
-      <h3>Sat</h3><p>Rain 🌧️</p><p>21°C</p><p>Humidity: 60%</p><p>Wind: 13 km/h</p>
-    </div>
-    <div class="card" style="width:150px;background:linear-gradient(135deg,#6ec1ff,#9be2ff);cursor:pointer;">
-      <h3>Sun</h3><p>Sunny ☀️</p><p>27°C</p><p>Humidity: 30%</p><p>Wind: 9 km/h</p>
-    </div>
+  <h2 style="text-align:center;margin:12px;">Weather (Approximate)</h2>
+  <div class="card">
+    <ul id="weatherList">
+      <!-- JS will populate approximate weather -->
+    </ul>
   </div>
 </section>
 
-<footer>© 2025 HYPER X — All Rights Reserved</footer>
+<footer style="text-align:center;margin:12px;">© 2025 HYPER X — All Rights Reserved</footer>
 
 </div></div>
 <button id="backToTop" title="Back to top">↑</button>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
-// Loading -> Landing -> Content
+// Loading
 window.addEventListener('load', ()=>{
-  setTimeout(()=> {document.getElementById('loadingScreen').style.display='none';},1500);
+  setTimeout(()=>{document.getElementById('loadingScreen').style.display='none';},1500);
 });
+
+// Enter
 document.getElementById('enterBtn').addEventListener('click', ()=>{
   document.getElementById('landingPage').style.display='none';
   document.getElementById('content').style.display='block';
 });
 
 // QR
-new QRCode(document.getElementById('qrBox'),{text:'https://www.instagram.com/',width:180,height:180,colorDark:'#000000',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.H});
+new QRCode(document.getElementById('qrBox'),{
+  text:'https://www.instagram.com/',
+  width:180,height:180,colorDark:'#000000',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.H
+});
 
-// Quotes slider
-const quotes=["Providing ready-to-use project paths with a guaranteed plan.","Precise project strategies for fast results.","Your idea + roadmap = success."];
-let qIndex=0;
-setInterval(()=>{
-  const el=document.getElementById('quotes'); el.style.opacity=0;
-  setTimeout(()=>{el.textContent=quotes[qIndex];el.style.opacity=1;},200);
-  qIndex=(qIndex+1)%quotes.length;
-},5000);
-
-// Navigation pages
+// Navigation
 const navButtons=document.querySelectorAll('.navBtn');
 navButtons.forEach(btn=>{btn.addEventListener('click',()=>{showPage(btn.getAttribute('data-page'))})});
 function showPage(num){
@@ -231,17 +187,53 @@ function showPage(num){
   const target=document.getElementById('page'+num);
   if(target){target.style.display='block'; target.style.opacity=0; setTimeout(()=>target.style.opacity=1,20);}
   navButtons.forEach(b=>b.classList.toggle('active',b.getAttribute('data-page')===num));
-  localStorage.setItem('hyperx_lastPage',num);
 }
-const last=localStorage.getItem('hyperx_lastPage');
-if(last){showPage(last);}else{showPage('1');}
+showPage('1');
 
-// Dark/Light mode
+// Dark/Light
 const modeToggle=document.getElementById('modeToggle');
 modeToggle.addEventListener('click',()=>{
   document.body.classList.toggle('light-mode');
-  const isLight=document.body.classList.contains('light-mode');
-  modeToggle.textContent=isLight?'☀️':'🌙';
-  localStorage.setItem('hyperx_mode',isLight?'light':'dark');
+  modeToggle.textContent=document.body.classList.contains('light-mode')?'☀️':'🌙';
 });
-if(localStorage.getItem('hyperx_mode')
+
+// Clock + date + approximate Hijri
+function updateClock(){
+  const now=new Date();
+  document.getElementById('clock').textContent=now.toLocaleTimeString();
+  document.getElementById('date').textContent=now.toLocaleDateString(undefined,{weekday:'short',year:'numeric',month:'short',day:'numeric'});
+  // approximate Hijri date
+  const hijriOffset=622;
+  let hijriYear=now.getFullYear()-hijriOffset+Math.floor(now.getMonth()/12);
+  document.getElementById('hijri').textContent='Hijri: ~'+hijriYear;
+}
+setInterval(updateClock,1000); updateClock();
+
+// Back to top
+const backBtn=document.getElementById('backToTop');
+window.addEventListener('scroll',()=>{
+  if(window.scrollY>220) backBtn.classList.add('show'); else backBtn.classList.remove('show');
+  const scrolled=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight))*100;
+  document.getElementById('scrollBar').style.width=scrolled+'%';
+});
+backBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+// Weather approximate
+const weatherData=[
+  {day:'Mon',weather:'Sunny',temp:'30°C'},
+  {day:'Tue',weather:'Cloudy',temp:'28°C'},
+  {day:'Wed',weather:'Rain',temp:'25°C'},
+  {day:'Thu',weather:'Sunny',temp:'31°C'},
+  {day:'Fri',weather:'Cloudy',temp:'29°C'},
+  {day:'Sat',weather:'Thunder',temp:'27°C'},
+  {day:'Sun',weather:'Sunny',temp:'32°C'},
+];
+const weatherList=document.getElementById('weatherList');
+weatherData.forEach(w=>{
+  const li=document.createElement('li');
+  li.textContent=w.day+' - '+w.weather+' - '+w.temp;
+  weatherList.appendChild(li);
+});
+</script>
+</body>
+</html>
