@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HYPER X</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent1:#4a00e0; --accent2:#8e2de2; --accent3:#3fe0c5; --accent4:#00ffb0;
+  --text:#fff; --bg-dark:#0f0f17; --neon:#ff00ff; --cardBG: rgba(255,255,255,0.08);
+}
+/* Reset */
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;font-family:'Poppins',sans-serif;overflow-x:hidden;transition: background .4s, color .3s;}
+body{background:linear-gradient(-45deg,var(--accent1),var(--accent2),var(--accent3),var(--accent4));background-size:400% 400%;animation:gradientBG 15s ease infinite;color:var(--text);}
+@keyframes gradientBG{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+body.light-mode{background: linear-gradient(135deg,#f6f9ff,#eaf7ff,#e0fff4);color:#111;}
+body.light-mode .card{--cardBG: rgba(0,0,0,0.06);}
+#loadingScreen{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:var(--bg-dark);font-weight:700;font-size:28px;color:#fff;}
+#loadingLogo{animation:logoPop 1.2s ease infinite;}
+@keyframes logoPop{0%{transform:scale(0.98);opacity:0.8}50%{transform:scale(1.02);opacity:1}100%{transform:scale(0.98);opacity:0.9}}
+#landingPage{position:fixed;inset:0;z-index:9998;display:flex;align-items:center;justify-content:center;background:var(--bg-dark);}
+.landingCenter{text-align:center;animation:fadeSlide 1s ease;padding:20px;}
+.landingCenter h1{font-size:48px;margin-bottom:10px;font-weight:900;color:var(--neon);text-shadow:0 0 10px var(--neon),0 0 20px var(--neon);}
+.landingCenter p{font-size:18px;opacity:0.95;margin-bottom:20px;}
+#enterBtn{padding:14px 36px;border-radius:999px;border:none;font-weight:700;background:#fff;color:var(--accent1);cursor:pointer;font-size:16px;box-shadow:0 8px 30px rgba(0,0,0,0.15);transition:transform .18s,box-shadow .18s;}
+#enterBtn:hover{transform:scale(1.05);box-shadow:0 12px 40px rgba(0,0,0,0.18);}
+@keyframes fadeSlide{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
+header{width:calc(100%-24px);max-width:980px;margin:18px auto;padding:12px 18px;display:flex;justify-content:space-between;align-items:center;border-radius:12px;backdrop-filter:blur(8px);background: rgba(0,0,0,0.18);box-shadow:0 6px 18px rgba(0,0,0,0.18);}
+body.light-mode header{background:rgba(255,255,255,0.7);}
+.header-left h1{font-size:22px;font-weight:800;color:var(--neon);text-shadow:0 0 6px var(--neon),0 0 12px var(--neon);}
+.header-left .slogan{font-size:12px;opacity:0.9;}
+.header-right{display:flex;align-items:center;gap:10px;font-size:13px;opacity:0.95;}
+.mode-toggle{padding:8px 10px;border-radius:10px;border:none;background:rgba(255,255,255,0.08);cursor:pointer;}
+.pages-nav{display:flex;justify-content:center;gap:8px;margin:12px 0;}
+.navBtn{padding:8px 18px;border-radius:999px;border:none;background:rgba(255,255,255,0.08);cursor:pointer;transition:all .2s;}
+.navBtn:hover{transform:scale(1.03);box-shadow:0 8px 24px rgba(0,0,0,0.15);}
+.navBtn.active{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff;box-shadow:0 12px 30px rgba(0,0,0,0.25);}
+.card{width:100%;max-width:760px;background:var(--cardBG);padding:16px;border-radius:14px;backdrop-filter:blur(12px);transition:transform .28s, box-shadow .28s;margin:14px auto;}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.28);}
+.card-3d{perspective:900px;}
+.card-3d-inner{transition: transform .25s ease;transform-style:preserve-3d;text-align:center;}
+.card img{width:100%;border-radius:12px;margin-bottom:10px;}
+#scrollBar{position:fixed;top:0;left:0;height:4px;width:0%;background:linear-gradient(90deg,var(--accent1),var(--accent2));z-index:1200;}
+#backToTop{position:fixed;right:20px;bottom:22px;padding:10px 12px;border-radius:999px;background:var(--neon);color:#fff;border:none;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,0.2);opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s;}
+#backToTop.show{opacity:1;transform:translateY(0);}
+#quotes{text-align:center;font-weight:600;margin:12px auto;font-size:16px;max-width:760px;}
+.weather-card{background:var(--cardBG);padding:16px;border-radius:14px;backdrop-filter:blur(12px);margin:12px auto;cursor:pointer;}
+.weather-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.25);}
+.container{padding:12px;}
+@media (max-width:640px){
+header{flex-direction:column;gap:10px;align-items:center;}
+.container{padding:8px;}
+}
+</style>
+</head>
+<body>
+
+<!-- Loading -->
+<div id="loadingScreen"><div id="loadingLogo">HYPER X</div></div>
+
+<!-- Landing -->
+<div id="landingPage">
+  <div class="landingCenter">
+    <h1>HYPER X</h1>
+    <p>TURN IDEAS INTO SUCCESSFUL DEALS</p>
+    <button id="enterBtn">ENTER</button>
+  </div>
+</div>
+
+<!-- Scroll -->
+<div id="scrollBar"></div>
+
+<!-- Main Content -->
+<div id="content" style="display:none;">
+<div class="container">
+
+<header>
+  <div class="header-left">
+    <h1>HYPER X</h1>
+    <div class="slogan">TURN IDEAS INTO SUCCESSFUL DEALS</div>
+  </div>
+  <div class="header-right">
+    <div class="clockBox" style="text-align:right">
+      <div id="clock" class="clock">--:--:--</div>
+      <div id="date" class="date">-- -- ----</div>
+    </div>
+    <button id="modeToggle" class="mode-toggle">🌙</button>
+  </div>
+</header>
+
+<div class="pages-nav">
+  <button class="navBtn active" data-page="1">Our Services</button>
+  <button class="navBtn" data-page="2">Offers</button>
+  <button class="navBtn" data-page="3">My Project</button>
+  <button class="navBtn" data-page="4">Cars</button>
+  <button class="navBtn" data-page="5">Weather</button>
+</div>
+
+<div id="quotes">Providing ready-to-use project paths with a guaranteed plan.</div>
+
+<!-- Sections -->
+<section id="page1" class="page" style="display:block;">
+  <h2 style="text-align:center;margin:12px;">Our Services</h2>
+  <div class="card">
+    <ul>
+      <li>Logo designs - $2</li>
+      <li>Instagram followers - from $1.5</li>
+      <li>TikTok followers - from $2</li>
+      <li>ChatGPT access - from $5</li>
+      <li>Netflix - from $6</li>
+      <li>Canva Pro lifetime - $2</li>
+    </ul>
+  </div>
+  <p style="text-align:center;font-style:italic;">Quality services at affordable prices.</p>
+</section>
+
+<section id="page2" class="page" style="display:none;">
+  <h2 style="text-align:center;margin:12px;">Offers</h2>
+  <div class="card">
+    <p>Ready-to-start paths for a successful project with tested plans.</p>
+    <ul>
+      <li>Double-check orders before requesting services.</li>
+      <li>Follow instructions for best results.</li>
+      <li>Share minimal personal info online.</li>
+    </ul>
+    <div class="card" style="text-align:center;">
+      <button onclick="window.open('https://www.instagram.com/anas__.elk','_blank')">Instagram</button>
+      <p>QR codes and social links included here.</p>
+    </div>
+  </div>
+  <p style="text-align:center;font-style:italic;">Best deals curated for you.</p>
+</section>
+
+<section id="page3" class="page" style="display:none;">
+  <h2 style="text-align:center;margin:12px;">My Project</h2>
+  <div class="card">
+    <p>Submit your project idea (starting from $100)</p>
+    <p style="font-style:italic;">We provide guidance and roadmaps to success.</p>
+  </div>
+  <p style="text-align:center;font-style:italic;">Turn your ideas into real projects.</p>
+</section>
+
+<section id="page4" class="page" style="display:none;">
+  <h2 style="text-align:center;margin:12px;">Cars</h2>
+  <!-- Example car card -->
+  <div class="card card-3d">
+    <div class="card-3d-inner card">
+      <img src="https://cdn.pixabay.com/photo/2016/01/21/14/29/bmw-1150001_1280.jpg" alt="BMW M3">
+      <h3>BMW M3 Competition</h3>
+      <p>Price: $80,000 | Color: Blue | HP: 503</p>
+    </div>
+  </div>
+  <!-- Add more car cards here as needed -->
+  <p style="text-align:center;font-style:italic;">Luxury cars showcase.</p>
+</section>
+
+<section id="page5" class="page" style="display:none;">
+  <h2 style="text-align:center;margin:12px;">Weather - Morocco Major Cities</h2>
+  <div class="weather-card">Casablanca: ☀️ 28°C, Clear</div>
+  <div class="weather-card">Rabat: 🌤️ 26°C, Partly Cloudy</div>
+  <div class="weather-card">Marrakech: 🌞 31°C, Sunny</div>
+  <div class="weather-card">Fes: 🌤️ 27°C, Partly Cloudy</div>
+  <div class="weather-card">Tangier: ☁️ 24°C, Cloudy</div>
+  <div class="weather-card">Agadir: 🌞 29°C, Sunny</div>
+  <div class="weather-card">Oujda: 🌤️ 25°C, Partly Cloudy</div>
+  <p style="text-align:center;font-style:italic;">Weather forecast (approximate and live feel).</p>
+</section>
+
+<footer style="text-align:center;margin:20px 0;">© 2025 HYPER X — Turn Ideas into Reality</footer>
+
+</div></div>
+<button id="backToTop" title="Back to top">↑</button>
+
+<script>
+// Loading -> Landing -> Content
+window.addEventListener('load', ()=>{
+  setTimeout(()=> {document.getElementById('loadingScreen').style.display='none';},1500);
+});
+document.getElementById('enterBtn').addEventListener('click', ()=>{
+  document.getElementById('landingPage').style.display='none';
+  document.getElementById('content').style.display='block';
+});
+
+// Navigation
+const navButtons=document.querySelectorAll('.navBtn');
+navButtons.forEach(btn=>{btn.addEventListener('click',()=>{showPage(btn.getAttribute('data-page'))})});
+function showPage(num){
+  document.querySelectorAll('.page').forEach(p=>p.style.display='none');
+  const target=document.getElementById('page'+num);
+  if(target){target.style.display='block'; target.style.opacity=0; setTimeout(()=>target.style.opacity=1,20);}
+  navButtons.forEach(b=>b.classList.toggle('active',b.getAttribute('data-page')===num));
+}
+
+// Dark/Light Mode
+const modeToggle=document.getElementById('modeToggle');
+modeToggle.addEventListener('click',()=>{
+  document.body.classList.toggle('light-mode');
+  const isLight=document.body.classList.contains('light-mode');
+  modeToggle.textContent=isLight?'☀️':'🌙';
+});
+
+// Clock
+function updateClock(){
+  const now=new Date();
+  document.getElementById('clock').textContent=now.toLocaleTimeString();
+  document.getElementById('date').textContent=now.toLocaleDateString(undefined,{weekday:'short',year:'numeric',month:'short',day:'numeric'});
+}
+setInterval(updateClock,1000); updateClock();
+
+// Back to top + Scroll
+const backBtn=document.getElementById('backToTop');
+window.addEventListener('scroll',()=>{
+  if(window.scrollY>220) backBtn.classList.add('show'); else backBtn.classList.remove('show');
+  const scrolled=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight))*100;
+  document.getElementById('scrollBar').style.width=scrolled+'%';
+});
+backBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+</script>
+
+</body>
+                                                   </html>
