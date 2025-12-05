@@ -3,12 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HYPER X</title>
+<title>HyperX</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --accent1:#4a00e0; --accent2:#8e2de2; --accent3:#3fe0c5; --accent4:#00ffb0;
-  --text:#fff; --bg-dark:#0f0f17; --neon:#ff00ff; --cardBG: rgba(255,255,255,0.08);
+  --accent1:#4a00e0;
+  --accent2:#8e2de2;
+  --accent3:#3fe0c5;
+  --accent4:#00ffb0;
+  --text:#fff;
+  --bg-dark:#0f0f17;
+  --neon:#ff00ff;
+  --cardBG: rgba(255,255,255,0.08);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html,body{height:100%;font-family:'Poppins',sans-serif;overflow-x:hidden;transition: background .4s, color .3s;}
@@ -23,8 +29,8 @@ body.light-mode .card{--cardBG: rgba(0,0,0,0.06);}
 
 #landingPage{position:fixed;inset:0;z-index:9998;display:flex;align-items:center;justify-content:center;background:var(--bg-dark);}
 .landingCenter{text-align:center;animation:fadeSlide 1s ease;padding:20px;}
-.landingCenter h1{font-size:48px;margin-bottom:10px;font-weight:800;color:var(--neon);text-shadow:0 0 10px var(--neon),0 0 20px var(--neon);}
-.landingCenter p{font-size:18px;opacity:0.95;margin-bottom:20px;}
+.landingCenter h1{font-size:44px;margin-bottom:10px;font-weight:800;color:var(--neon);text-shadow:0 0 10px var(--neon),0 0 20px var(--neon);}
+.landingCenter p{font-size:16px;opacity:0.95;margin-bottom:20px;}
 #enterBtn{padding:14px 32px;border-radius:999px;border:none;font-weight:700;background:#fff;color:var(--accent1);cursor:pointer;font-size:16px;box-shadow:0 8px 30px rgba(0,0,0,0.15);transition:transform .18s,box-shadow .18s;}
 #enterBtn:hover{transform:scale(1.05);box-shadow:0 12px 40px rgba(0,0,0,0.18);}
 @keyframes fadeSlide{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
@@ -74,110 +80,117 @@ header{flex-direction:column;gap:10px;align-items:center;}
 <div id="landingPage">
   <div class="landingCenter">
     <h1>HYPER X</h1>
-    <p>Transforming Ideas into Reality</p>
+    <p>Powering Your Digital Success</p>
     <button id="enterBtn">ENTER</button>
   </div>
 </div>
 
+<!-- Scroll -->
 <div id="scrollBar"></div>
 
+<!-- Main Content -->
 <div id="content" style="display:none;">
 <div class="container">
 
 <header>
   <div class="header-left">
     <h1>HYPER X</h1>
-    <div class="slogan">Transforming Ideas into Reality</div>
+    <div class="slogan">Powering Your Digital Success</div>
   </div>
   <div class="header-right">
     <div class="clockBox" style="text-align:right">
-      <div id="clock">--:--:--</div>
-      <div id="date">-- -- ----</div>
-      <div id="hijri">-- -- ----</div>
+      <div id="clock" class="clock">--:--:--</div>
+      <div id="date" class="date">-- -- ----</div>
+      <div id="hijri" class="hijri">-- -- ----</div>
     </div>
     <button id="modeToggle" class="mode-toggle">🌙</button>
   </div>
 </header>
 
 <div class="pages-nav">
-  <button class="navBtn active" data-page="1">Cars</button>
+  <button class="navBtn active" data-page="1">Services</button>
   <button class="navBtn" data-page="2">Offers</button>
   <button class="navBtn" data-page="3">My Projects</button>
   <button class="navBtn" data-page="4">Weather</button>
 </div>
 
-<div id="quotes">Delivering ready-to-use project paths with guaranteed plans.</div>
+<div id="quotes">Providing ready-to-use project paths with a guaranteed plan.</div>
 
+<!-- Services -->
 <section id="page1" class="page" style="display:block;">
-  <h2 style="text-align:center;margin:12px;">Our Cars</h2>
+  <h2 style="text-align:center;margin:12px;">OUR SERVICES</h2>
   <div class="card card-3d"><div class="card-3d-inner card">
-    <ul>
-      <li>BMW M3 Competition</li>
-      <li>BMW M4</li>
-      <li>BMW M5</li>
-      <li>Audi RS7</li>
-      <li>Mercedes AMG GT</li>
-      <li>Porsche 911 Turbo</li>
-      <li>Ferrari F8</li>
-      <li>Lamborghini Huracan</li>
-      <li>…and more</li>
-    </ul>
+    <table class="services-table" style="width:100%;color:inherit;border-collapse:collapse;">
+      <tr><th>Car Model</th><th>Price</th></tr>
+      <tr><td>BMW M3 Competition</td><td>$120,000</td></tr>
+      <tr><td>BMW M4</td><td>$110,000</td></tr>
+      <tr><td>BMW M5</td><td>$130,000</td></tr>
+      <tr><td>BMW 5.4.3 CS</td><td>$140,000</td></tr>
+      <!-- أضف سيارات أخرى هنا -->
+    </table>
   </div></div>
 </section>
 
+<!-- Offers -->
 <section id="page2" class="page" style="display:none;">
-  <h2 style="text-align:center;margin:12px;">Offers</h2>
+  <h2 style="text-align:center;margin:12px;">OFFERS</h2>
   <div class="card qr-card" style="max-width:520px;">
-    <p>Scan QR or open Instagram for details</p>
-    <div id="qrBox"></div>
-    <button id="instBtn" class="inst-btn" title="Open Instagram">Instagram <span class="ripple" style="display:none"></span></button>
+    <p>Exclusive offers & ready-to-use paths.</p>
+    <div id="qrBox" aria-hidden="true"></div>
+    <button id="instBtn" class="inst-btn">Instagram <span class="ripple"></span></button>
   </div>
 </section>
 
+<!-- My Projects -->
 <section id="page3" class="page" style="display:none;">
-  <h2 style="text-align:center;margin:12px;">My Projects</h2>
-  <div class="card card-3d">
-    <p>We develop websites in various fields at affordable prices. Payment upon delivery.</p>
-    <ul>
-      <li>Project 1</li>
-      <li>Project 2</li>
-      <li>Project 3</li>
-    </ul>
+  <h2 style="text-align:center;margin:12px;">MY PROJECTS</h2>
+  <div class="card" style="max-width:720px;">
+    <p>We develop websites in multiple fields with competitive prices. Payment upon delivery. Starting at $100.</p>
   </div>
 </section>
 
+<!-- Weather -->
 <section id="page4" class="page" style="display:none;">
-  <h2 style="text-align:center;margin:12px;">Weather (Approximate)</h2>
-  <div class="card">
-    <ul id="weatherList">
-      <!-- JS will populate approximate weather -->
-    </ul>
+  <h2 style="text-align:center;margin:12px;">WEATHER</h2>
+  <div class="card" id="weatherCard">
+    <p>Weather information for major Moroccan cities (approximate)</p>
+    <ul id="weatherList"></ul>
   </div>
 </section>
 
-<footer style="text-align:center;margin:12px;">© 2025 HYPER X — All Rights Reserved</footer>
+<footer>© 2025 HYPER X — All Rights Reserved</footer>
 
 </div></div>
 <button id="backToTop" title="Back to top">↑</button>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
-// Loading
+// Landing Page with 1.5s auto-hide
 window.addEventListener('load', ()=>{
   setTimeout(()=>{document.getElementById('loadingScreen').style.display='none';},1500);
-});
+  const autoHide = setTimeout(()=>{
+    document.getElementById('landingPage').style.display='none';
+    document.getElementById('content').style.display='block';
+  },1500);
 
-// Enter
-document.getElementById('enterBtn').addEventListener('click', ()=>{
-  document.getElementById('landingPage').style.display='none';
-  document.getElementById('content').style.display='block';
+  document.getElementById('enterBtn').addEventListener('click', ()=>{
+    clearTimeout(autoHide);
+    document.getElementById('landingPage').style.display='none';
+    document.getElementById('content').style.display='block';
+  });
 });
 
 // QR
-new QRCode(document.getElementById('qrBox'),{
-  text:'https://www.instagram.com/',
-  width:180,height:180,colorDark:'#000000',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.H
-});
+new QRCode(document.getElementById('qrBox'),{text:'https://www.instagram.com/anas__.elk',width:180,height:180,colorDark:'#000',colorLight:'#fff',correctLevel:QRCode.CorrectLevel.H});
+
+// Quotes slider
+const quotes=["Providing ready-to-use project paths with a guaranteed plan.","Precise project strategies for fast results.","Your idea + roadmap = success."];
+let qIndex=0;
+setInterval(()=>{
+  const el=document.getElementById('quotes'); el.style.opacity=0;
+  setTimeout(()=>{el.textContent=quotes[qIndex];el.style.opacity=1;},200);
+  qIndex=(qIndex+1)%quotes.length;
+},5000);
 
 // Navigation
 const navButtons=document.querySelectorAll('.navBtn');
@@ -188,24 +201,20 @@ function showPage(num){
   if(target){target.style.display='block'; target.style.opacity=0; setTimeout(()=>target.style.opacity=1,20);}
   navButtons.forEach(b=>b.classList.toggle('active',b.getAttribute('data-page')===num));
 }
-showPage('1');
 
-// Dark/Light
+// Dark/Light mode
 const modeToggle=document.getElementById('modeToggle');
 modeToggle.addEventListener('click',()=>{
   document.body.classList.toggle('light-mode');
   modeToggle.textContent=document.body.classList.contains('light-mode')?'☀️':'🌙';
 });
 
-// Clock + date + approximate Hijri
+// Clock
 function updateClock(){
   const now=new Date();
   document.getElementById('clock').textContent=now.toLocaleTimeString();
-  document.getElementById('date').textContent=now.toLocaleDateString(undefined,{weekday:'short',year:'numeric',month:'short',day:'numeric'});
-  // approximate Hijri date
-  const hijriOffset=622;
-  let hijriYear=now.getFullYear()-hijriOffset+Math.floor(now.getMonth()/12);
-  document.getElementById('hijri').textContent='Hijri: ~'+hijriYear;
+  document.getElementById('date').textContent=now.toLocaleDateString();
+  document.getElementById('hijri').textContent='Hijri: '+(now.getFullYear()-580)+'/'+(now.getMonth()+1)+'/'+now.getDate(); // تقريبي
 }
 setInterval(updateClock,1000); updateClock();
 
@@ -213,27 +222,4 @@ setInterval(updateClock,1000); updateClock();
 const backBtn=document.getElementById('backToTop');
 window.addEventListener('scroll',()=>{
   if(window.scrollY>220) backBtn.classList.add('show'); else backBtn.classList.remove('show');
-  const scrolled=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight))*100;
-  document.getElementById('scrollBar').style.width=scrolled+'%';
-});
-backBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-
-// Weather approximate
-const weatherData=[
-  {day:'Mon',weather:'Sunny',temp:'30°C'},
-  {day:'Tue',weather:'Cloudy',temp:'28°C'},
-  {day:'Wed',weather:'Rain',temp:'25°C'},
-  {day:'Thu',weather:'Sunny',temp:'31°C'},
-  {day:'Fri',weather:'Cloudy',temp:'29°C'},
-  {day:'Sat',weather:'Thunder',temp:'27°C'},
-  {day:'Sun',weather:'Sunny',temp:'32°C'},
-];
-const weatherList=document.getElementById('weatherList');
-weatherData.forEach(w=>{
-  const li=document.createElement('li');
-  li.textContent=w.day+' - '+w.weather+' - '+w.temp;
-  weatherList.appendChild(li);
-});
-</script>
-</body>
-</html>
+  const scrolled=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight))*
